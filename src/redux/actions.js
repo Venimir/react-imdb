@@ -52,10 +52,44 @@ export const getMdTopRatedMovies = () => async dispatch => {
     }
 };
 
+export const getMdPopularMovies = () => async dispatch => {
+    try {
+        const response = await networkClient.get(
+         "movie/popular");
+        dispatch(setMdMovies(response.results));
+        dispatch(setTotalPages(response.total_pages));
+    } catch(ex) {
+        dispatch(setError({message: 'There was an error!'}))
+    }
+};
+
+export const getMdUpComingMovies = () => async dispatch => {
+    try {
+        const response = await networkClient.get(
+         "movie/upcoming");
+        dispatch(setMdMovies(response.results));
+        dispatch(setTotalPages(response.total_pages));
+    } catch(ex) {
+        dispatch(setError({message: 'There was an error!'}))
+    }
+};
+
+
 export const getMdDiscoverMovies = params => async dispatch => {
     try {
         const response = await networkClient.get(
          "discover/movie", params);
+        dispatch(setMdMovies(response.results));
+        dispatch(setTotalPages(response.total_pages));
+    } catch(ex) {
+        dispatch(setError({message: 'There was an error!'}))
+    }
+};
+
+export const getMdSearchMovies = params => async dispatch => {
+    try {
+        const response = await networkClient.get(
+         "search/movie", params);
         dispatch(setMdMovies(response.results));
         dispatch(setTotalPages(response.total_pages));
     } catch(ex) {

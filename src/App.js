@@ -1,8 +1,8 @@
 import React from 'react';
-import './assets/styles/style.css';
+
 import Header from './components/header/Header';
 import Home from './pages/Home';
-
+import TopRated from './pages/TopRated';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./redux/reducers";
@@ -12,6 +12,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import UpComming from './pages/UpComming';
+
 
 const Layout = props => (
   <>
@@ -32,25 +34,25 @@ const routes = [
           <Home/>
       </Layout>
   },
+  {
+    path: '/topRated',
+    exact: true,
+    main: () => <Layout>
+        <TopRated/>
+    </Layout>
+},
+  {
+      path: '/upComing',
+      exact: false,
+      main: () => <Layout>
+          <UpComming/>
+      </Layout>
+  },
   // {
   //     path: '/favorite',
   //     exact: false,
   //     main: () => <Layout>
   //         <Favorite/>
-  //     </Layout>
-  // },
-  // {
-  //     path: '/gallery',
-  //     exact: false,
-  //     main: () => <Layout>
-  //         <Movies/>
-  //     </Layout>
-  // },
-  // {
-  //     path: '/popularmovies',
-  //     exact: true,
-  //     main: () => <Layout>
-  //         <MovieList/>
   //     </Layout>
   // },
   // {

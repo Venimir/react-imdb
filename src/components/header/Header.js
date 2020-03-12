@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import imdb from "../../images/imdb.png";
+import imdb from "../../assets/images/imdb.png";
 import {
     Collapse,
     Navbar,
@@ -33,7 +33,7 @@ class Header extends Component {
                     tag={RRNavLink}
                     className="navbar-brand"
                     exact to="/" target="_blank">
-                        <img src={imdb}/>
+                        <img src={imdb} alt="Imdb"/>
                 </NavLink>
             <NavbarToggler onClick={this.toggleIsOpen} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -46,29 +46,29 @@ class Header extends Component {
                             Home
                         </NavLink>
                     </NavItem>
-                    {/* <NavItem>
-                        <NavLink
-                            tag={RRNavLink}
-                            exact to="/favorite"
-                            activeClassName="active">
-                            Favorite Movies
-                        </NavLink>
-                    </NavItem>
                     <NavItem>
                         <NavLink
                             tag={RRNavLink}
-                            exact to="/popularmovies"
+                            exact to="/toprated"
                             activeClassName="active">
-                            Popular Movies
+                            Top Rated
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink
                             tag={RRNavLink}
                             exact 
-                            to="/gallery"
+                            to="/upComing"
                             activeClassName="active">
-                            Gallery
+                            Up Coming
+                        </NavLink>
+                    </NavItem> 
+                    {/* <NavItem>
+                        <NavLink
+                            tag={RRNavLink}
+                            exact to="/favorite"
+                            activeClassName="active">
+                            Favorite Movies
                         </NavLink>
                     </NavItem> */}
                 </Nav>
