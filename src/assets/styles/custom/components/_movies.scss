@@ -1,13 +1,11 @@
-// .single-movie {
-//     .movie-image {
-//         width: 240px;
-//         height: 360px;
-//     //     @include media-breakpoint-down(sm) {
-//     //         max-width: 100%;
-//     //     }
-//     }
-//     .movie-description {
-//         color: white("600");
-//     }
-// }
-
+.single-movie {
+    .movie-image {
+        min-width: 240px;
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+        }
+    }
+    .movie-description {
+        color: whitey("600");
+    }
+}
